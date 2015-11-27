@@ -5,6 +5,7 @@
 
   angular
     .module('time-now')
+    .controller('timeNowController', TimeNowController)
     .directive('timeNow', function () {
       return {
         restrict: 'E',
