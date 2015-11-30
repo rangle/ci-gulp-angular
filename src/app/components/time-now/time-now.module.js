@@ -1,1 +1,1 @@
-angular.module('time-now', []);
+angular.module('time-now', ['ui.router']);

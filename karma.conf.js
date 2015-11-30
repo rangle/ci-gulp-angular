@@ -55,7 +55,7 @@ module.exports = function(config) {
 
     logLevel: 'WARN',
 
-    frameworks: ['jasmine', 'angular-filesort'],
+    frameworks: ['mocha', 'chai', 'jasmine', 'angular-filesort'],
 
     angularFilesort: {
       whitelist: [path.join(conf.paths.src, '/**/!(*.html|*.spec|*.mock).js')]
@@ -68,6 +68,8 @@ module.exports = function(config) {
       'karma-angular-filesort',
       'karma-coverage',
       'karma-jasmine',
+      'karma-chai',
+      'karma-mocha',
       'karma-ng-html2js-preprocessor'
     ],
 
