@@ -1,0 +1,46 @@
+<div class="techs" layout-align="center">
+<md-content layout-padding layout="column" layout-sm="column">
+  <md-input-container flex>
+    <label>Asset Class</label>
+    <md-select ng-change="listCtrl.filterList()" ng-model="listCtrl.query.assetClassName">
+      <md-option ng-repeat="assetClass in listCtrl.assetClasses" value="{{assetClass}}">
+        {{assetClass}}
+      </md-option>
+    </md-select>
+  </md-input-container>
+ <md-input-container flex>
+    <label>Fund Manager</label>
+    <md-select ng-change="listCtrl.filterList()" ng-model="listCtrl.query.fundManagerName">
+      <md-option ng-repeat="fundManager in listCtrl.fundManagers" value="{{fundManager}}">
+        {{fundManager}}
+      </md-option>
+    </md-select>
+  </md-input-container>
+ <md-input-container flex>
+    <label>Fund Structure</label>
+    <md-select ng-change="listCtrl.filterList()" ng-model="listCtrl.query.fundStructureCode">
+      <md-option ng-repeat="fundStructure in listCtrl.fundStructure" value="{{fundStructure}}">
+        {{fundStructure}}
+      </md-option>
+    </md-select>
+  </md-input-container>
+ <md-input-container flex>
+    <label>Currency</label>
+    <md-select ng-change="listCtrl.filterList()" ng-model="listCtrl.query.fundCurrencyCode">
+      <md-option ng-repeat="currency in listCtrl.currencies" value="{{currency}}">
+        {{currency}}
+      </md-option>
+    </md-select>
+  </md-input-container>
+</md-content>
+  <md-card ng-repeat="item in listCtrl.multiFilterListService.filteredList track by $index | orderBy:'fundManagerInfo.name':reverse">
+    <md-card-content>
+      <h3 class="md-title">{{ item.fundManagerInfo.name }}</h3>
+      <p>{{ item.assetClass.name }}</p>
+    </md-card-content>
+    <div class="md-action-buttons">
+      <md-button ng-href="{{ item.fundDetailLink }}">Website</md-button>
+    </div>
+  </md-card>
+</div>
+

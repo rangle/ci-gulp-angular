@@ -29,7 +29,7 @@
      */
     vm.updateDate = function updateDate () {
       vm.date = new Date();
-    }
+    };
 
   }
 
