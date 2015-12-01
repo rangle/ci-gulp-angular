@@ -12,7 +12,13 @@
       };
     });
 
-  function MultiFilterListController(multiFilterListService) {
+  function MultiFilterListController(
+    multiFilterListService,
+    assetClasses,
+    fundManagers,
+    fundStructure,
+    currencies
+  ) {
 
     // purposely left as vm, while the controllerAs above is set to 'listCtrl'
     // we use vm = this here to avoid caveats of working with the this keyword in ES5
@@ -23,26 +29,10 @@
 
     vm.multiFilterListService = multiFilterListService;
 
-    vm.assetClasses = [
-      'US Equity',
-      'CA Equity',
-      'EU Equity'
-    ];
-
-    vm.fundManagers = [
-      'Hans',
-      'Tetrem'
-    ];
-
-    vm.fundStructure = [
-      'SEG'
-    ];
-
-    vm.currencies = [
-      'USD',
-      'CDN',
-      'EUR'
-    ];
+    vm.assetClasses = assetClasses;
+    vm.fundManagers = fundManagers; 
+    vm.fundStructure = fundStructure;
+    vm.currencies = currencies; 
 
     vm.filterList = function filterList() {
       multiFilterListService.filterList(vm.query); 

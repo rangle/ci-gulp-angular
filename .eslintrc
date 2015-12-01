@@ -7,7 +7,14 @@
   },
   "globals": {
     "angular": true,
+    "context": true,
+    "expect": true,
+    "_": true,
     "module": true,
     "inject": true
+  },
+  "rules": {
+    "angular/di": 0,
+    "angular/no-service-method": 0
   }
 }
