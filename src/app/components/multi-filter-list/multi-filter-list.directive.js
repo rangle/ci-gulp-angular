@@ -29,13 +29,20 @@
 
     vm.multiFilterListService = multiFilterListService;
 
+    vm.multiFilterListService.whenReady()
+      .then(null, function(error) {
+        console.log('VIEW ERROR');
+        vm.error = error.statusText;
+      });
+
+
     vm.assetClasses = assetClasses;
-    vm.fundManagers = fundManagers; 
+    vm.fundManagers = fundManagers;
     vm.fundStructure = fundStructure;
-    vm.currencies = currencies; 
+    vm.currencies = currencies;
 
     vm.filterList = function filterList() {
-      multiFilterListService.filterList(vm.query); 
+      multiFilterListService.filterList(vm.query);
     };
 
   }
